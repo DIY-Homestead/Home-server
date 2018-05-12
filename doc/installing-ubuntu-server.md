@@ -4,7 +4,7 @@ Installing Ubuntu server
 Getting started
 ---------------
 
-All that is needed is a normal [ubuntu server](https://www.ubuntu.com/download/server) install. If you want the server to talk the same language as almost all guides on the internet, install it in Egnlish, but choose your country's keyboard. Additional language support is added later. Once the OS is installed make sure it is up to date and has remote access.
+All that is needed is a normal [ubuntu server](https://www.ubuntu.com/download/server) install. If you want the server to talk the same language as almost all guides on the internet, install it in English, but choose your country's keyboard. Additional language support is added later. Once the OS is installed make sure it is up to date and has remote access.
 ```sh
 sudo apt update && sudo apt dist-upgrade && sudo apt autoremove
 sudo apt install ssh
