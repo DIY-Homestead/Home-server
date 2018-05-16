@@ -32,13 +32,12 @@ To see what locales you have installed
 locale -a
 ```
 
-Setting up preferred text editor
---------------------------------
-
-Editing files is something that you do a lot. By setting up your preferred editor you tell the system what editor to use when the system starts an editor or when you use the `editor` command instead of the name of your preferred editor. In this documentation we will try our best to use the `editor` keyword, instead of `vim` or `nano` or other. If your preferred editor is not in the list, just install it, and run the command again.
+Setting up additional packages
+------------------------------
 
 ```sh
-sudo update-alternatives --config editor
+sudo add-apt-repository ppa:tux-/gimle
+sudo apt update && sudo apt install gimle-core
 ```
 
 Done
