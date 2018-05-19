@@ -8,3 +8,8 @@ Throughout this documentation, it is assumed that you have your own private, hom
 3. [Installing and configuring Ldap](ldap-setup.md).
 4. [Setting up nginx proxy](nginx-proxy-setup.md).
 5. [Setting up letsencrypt](letsencrypt.md).
+
+Virtual Machines
+----------------
+
+1. [OS installation and setup](new-ubuntu-server-vm.md).
