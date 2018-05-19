@@ -6,3 +6,5 @@ Throughout this documentation, it is assumed that you have your own private, hom
 1. [Server installation](server-installation.md).
 2. [Installing VirtualBox](installing-virtualbox.md).
 3. [Installing and configuring Ldap](ldap-setup.md).
+4. [Setting up nginx proxy](nginx-proxy-setup.md).
+5. [Setting up letsencrypt](letsencrypt.md).
