@@ -3,7 +3,7 @@ Ldap setup
 
 This service provides authentication, and base records for humans, animals, locations, companies and so forth. This includes things like address, phone number, email, etc. Records can also contain tags and groups, but does not necessarily prefered to handle rights management. (authentication ≠ rights).
 
-One could say that the LDAP is the root of your system, if you have a user in ldap, all other services like login and such could be configured to use the same login. When setting up websites and services that require authentication they will all query the same LDAP and could also be set up as a signle sig on point later.
+One could say that the LDAP is the root of your system, if you have a user in ldap, all other services like login and such could be configured to use the same login. When setting up websites and services that require authentication they will all query the same LDAP and could also be set up as a signle sign in point later.
 
 The layout of this directory can be done in so many different ways. I do not claim to be an expert in this, and the suggested layout below is based on my limited knowledge. However, for a homestead server, it should be quite sufficient.
 
