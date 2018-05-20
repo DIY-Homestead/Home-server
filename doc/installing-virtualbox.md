@@ -38,3 +38,19 @@ Enable autocompletion
 sudo wget https://raw.githubusercontent.com/gryf/vboxmanage-bash-completion/master/VBoxManage -O /etc/bash_completion.d/VBoxManage
 exec bash
 ```
+
+Stopping the VM's before shutdown / reboot
+------------------------------------------
+
+To stop all the VM's before a shutdown / reboot run `stopallvms`
+
+Auto staring VM's at boot
+-------------------------
+
+```sh
+crontab -e
+```
+Add a new line for each VM
+```
+@reboot vbox --start vmname
+```
