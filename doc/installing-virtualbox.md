@@ -35,6 +35,6 @@ apt install gimle-vbox
 Enable autocompletion
 ---------------------
 ```sh
-sudo wget https://raw.githubusercontent.com/gryf/vboxmanage-bash-completion/master/VBoxManage -o /etc/bash_completion.d/VBoxManage
+sudo wget https://raw.githubusercontent.com/gryf/vboxmanage-bash-completion/master/VBoxManage -O /etc/bash_completion.d/VBoxManage
 exec bash
 ```
