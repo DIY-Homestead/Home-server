@@ -65,8 +65,8 @@ Contacts, Services, Administrators, Owners, Employees could be created as a grou
 * Add `posixAccount`
 * RDN: `cn` > `first.lastname`
 * sn: `Lastname`
-* uidNumber: `1001` (increase by one for each user).
-* gidNumber: `1001` (increase by one for each user).
+* uidNumber: `2001` (increase by one for each user).
+* gidNumber: `2001` (increase by one for each user).
 * uid: `username`
 * homeDirectory: `/home/username`
 
