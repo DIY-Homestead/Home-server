@@ -66,7 +66,7 @@ Contacts, Services, Administrators, Owners, Employees could be created as a grou
 * RDN: `cn` > `first.lastname`
 * sn: `Lastname`
 * uidNumber: `2001` (increase by one for each user).
-* gidNumber: `2001` (increase by one for each user).
+* gidNumber: `100`
 * uid: `username`
 * homeDirectory: `/home/username`
 
