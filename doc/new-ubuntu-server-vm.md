@@ -21,11 +21,42 @@ vbox --rdp vmname 51001
 vbox --start vmname
 ```
 
-You can now RDP into the newly created VM at port 51001 to [continue the installation process](installing-ubuntu-server.md).
+You can now RDP into the newly created VM at port 51001 to [continue the installation process](installing-ubuntu-server.md). Since we will set up ldap authenticatication on this server, it is adviced to only setup a local admin account during installation. Eg, Name: `Administrator`, username: `admin`.
 
 Once the installation is done and the VM is powered off, you can free the RDP port again
 ```sh
 vbox --rdp vmname
+```
+
+Setting up the vm
+-----------------
+
+```sh
+sudo apt install ldap-auth-client
+sudo auth-client-config -t nss -p lac_ldap
+```
+
+Enable user directories
+```sh
+sudo editor /usr/share/pam-configs/ldap_mkhomedir
+```
+```
+Name: activate mkhomedir
+Default: yes
+Priority: 900
+Session-Type: Additional
+Session:
+        required                        pam_mkhomedir.so umask=0022 skel=/etc/skel
+```
+
+If you want to limit user access to members of a speciffic group
+```sh
+sudo vim /etc/ldap.conf
+```
+
+Change `groupname` and `orgname` to your values.
+```
+nss_base_passwd ou=users,dc=valhall?one?ou=ou=groupname,dc=orgname,dc=valhall
 ```
 
 Removing a vm
