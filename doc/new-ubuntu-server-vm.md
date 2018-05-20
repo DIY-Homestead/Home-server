@@ -51,7 +51,7 @@ Session:
 
 If you want to limit user access to members of a speciffic group
 ```sh
-sudo vim /etc/ldap.conf
+sudo editor /etc/ldap.conf
 ```
 
 Change `groupname` and `orgname` to your values.

@@ -14,7 +14,7 @@ Adding a site
 -------------
 
 ```sh
-sudo vim /etc/nginx/sites-available/homestead.example.com.conf
+sudo editor /etc/nginx/sites-available/homestead.example.com.conf
 ```
 
 Configuration before adding certificate.
