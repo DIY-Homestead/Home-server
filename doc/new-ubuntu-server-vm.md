@@ -23,9 +23,10 @@ vbox --start vmname
 
 You can now RDP into the newly created VM at port 51001 to [continue the installation process](installing-ubuntu-server.md). Since we will set up ldap authenticatication on this server, it is adviced to only setup a local admin account during installation. Eg, Name: `Administrator`, username: `admin`.
 
-Once the installation is done and the VM is powered off, you can free the RDP port again
+Once the installation is done and the VM is powered off, you can free the RDP port again, and take a snapshot of it.
 ```sh
 vbox --rdp vmname
+vboxmanage snapshot vmname take "Initial"
 ```
 
 Setting up the vm

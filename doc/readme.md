@@ -13,3 +13,4 @@ Virtual Machines
 ----------------
 
 1. [OS installation and setup](new-ubuntu-server-vm.md).
+2. [Setting up nextcloud](nextcloud-file-hosting.md).
