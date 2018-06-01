@@ -37,6 +37,14 @@ sudo apt install ldap-auth-client
 sudo auth-client-config -t nss -p lac_ldap
 ```
 
+* Server name: ldap://ldapservername
+* Distinguished name: `dc=valhall`
+* Version: `3`
+* Make local root Database admin: `yes`
+* Does the LDAP database require login?: `no`
+* LDAP account for root: `cn=admin,dc=valhall`
+* LDAP root account password: Your ldap admin password.
+
 Enable user directories
 ```sh
 sudo editor /usr/share/pam-configs/ldap_mkhomedir
@@ -58,6 +66,20 @@ sudo editor /etc/ldap.conf
 Change `groupname` and `orgname` to your values.
 ```
 nss_base_passwd ou=users,dc=valhall?one?ou=ou=groupname,dc=orgname,dc=valhall
+```
+
+Verify that user has access
+```sh
+getent passwd username
+```
+
+Promoting a ldap user to sudo
+-----------------------------
+
+To give an ldap user sudo rights, simply add the sudo group to it
+
+```sh
+sudo usermod -aG sudo username
 ```
 
 Removing a vm
