@@ -96,3 +96,93 @@ There are many apps available, here is a selected few. Some might appear in mult
 
 * Files -> PDF viewer
 * Office & text -> PDF viewer
+
+
+Storage location
+----------------
+
+How to connect a drive on the host, and share it with the vm for nextcloud to store files on that drive.
+
+### Host configuration
+
+See [adding drives](adding-drives.md) to add a new drive.
+
+```sh
+sudo apt install nfs-kernel-server
+```
+
+Add a folder for nextcloud on the drive
+```sh
+sudo mkdir /mnt/MyDrive/nextcloud
+```
+
+Then we can share it:
+```sh
+sudo editor /etc/exports
+```
+```
+/mnt/Mydrive  ip.of.guest.vm(no_root_squash,rw)
+```
+And reload shares:
+```sh
+sudo exportfs -ra
+```
+
+
+
+### Guest (nextcloud vm) configuration
+
+```sh
+sudo apt install nfs-common
+```
+
+Mount the new disk and move the data to it
+```sh
+sudo mkdir /mnt/MyDrive
+sudo editor /etc/fstab
+```
+```
+hostnamefromshare:/mnt/MyDrive /mnt/MyDrive nfs rsize=8192,wsize=8192
+```
+Mount it, and copy the data over to it
+```sh
+mount /mnt/MyDrive
+cp -r /var/snap/nextcloud/common/nextcloud/data/ /mnt/MyDrive/nextcloud/
+```
+Then we can delete the old data and remount the drive to the nextcloud data directory.
+```sh
+sudo editor /etc/fstab
+```
+Replace the previous record with
+```
+hostnamefromshare:/mnt/MyDrive/nextcloud/data /var/snap/nextcloud/common/nextcloud/data nfs rsize=8192,wsize=8192
+```
+```sh
+rm -rf /var/snap/nextcloud/common/nextcloud/data/{*,.*}
+sudo mount /var/snap/nextcloud/common/nextcloud/data/
+```
+
+Enable and disable nextcloud
+----------------------------
+
+```
+sudo snap disable nextcloud
+sudo snap enable nextcloud
+```
+
+Enable and disable maintenance mode
+-----------------------------------
+
+```sh
+sudo nextcloud.occ maintenance:mode --on
+sudo nextcloud.occ maintenance:mode --off
+```
+
+Made changed directly on the filesystem
+---------------------------------------
+
+If you have have made changed directly on the filesystem you can make nexcloud scan it to discover the changes.
+
+```sh
+sudo nextcloud.occ files:scan --all
+```
