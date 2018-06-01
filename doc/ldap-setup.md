@@ -75,6 +75,7 @@ Add new attributes:
 * mail: `email@example.com`
 * telephoneNumber: `123456789`
 * userPassword: `CRYPT-SHA-512 hashed password`
+* loginShell: `/bin/bash`
 * ou: `ou=groupname,dc=orgname,dc=valhall` (Right click the group(s) you want want the user to be a part of, choose properties, and copy the DN value from there.
 
 ### Creating a service ###
